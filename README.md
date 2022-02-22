@@ -95,6 +95,9 @@ SmartKG是一款轻量级知识图谱可视化+智能对话框架。它能够根
              访问前端：http://${docker_host_ip}:8083 主页面
                        http://${docker_host_ip}:8083/upload 上传页面
 	     注意`docker_host_ip`的设置，不可以是`127.0.0.1`，否则MongoDB等无法正确连接。
+	(4) FAQ: 
+		- check port: 8080 should be available by default, otherwise `aspnetcore` service fails. (for example, on OSX Tecent Meeting uses this port, which prevent the service to start.) One could modify the configurations accordingly.
+		- for Mac OSX M1 user, it worth mention `export DOCKER_BUILDKIT=0`, `export COMPOSE_DOCKER_CLI_BUILD=0` could solve the `failed to solve with frontend dockerfile.v0` problem. [ISSUE](https://github.com/docker/buildx/issues/426#issuecomment-723208580)
 
 ## 3. 生成自己的图谱
 

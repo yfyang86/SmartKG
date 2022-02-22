@@ -364,6 +364,7 @@ SmartKGLocalBase/DataStores
 SmartKGLocalBase/temp
 dockers/smartkg_services.zip
 SmartKGLocalBase/kgbot_context.json
+dockers/smartkg_services/MongoData/
 
 .DS_Store
 node_modules

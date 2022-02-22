@@ -13,4 +13,5 @@ ENV PATH=/dotnet:$PATH \
 EXPOSE 8080
 
 CMD ["/bin/bash"]
+CMD tail -f /dev/null
 
