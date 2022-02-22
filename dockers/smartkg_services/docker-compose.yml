@@ -2,6 +2,8 @@ version: '2.3'
 
 services:
   aspnetcore:
+    environment:
+      - NODE_OPTIONS=--openssl-legacy-provider
     image: aspnetcore
     build: ./aspnetcore/
   mongo:
@@ -16,12 +18,21 @@ services:
     ports:
       - 27000:27017
   smartkg:
+    environment:
+      - NODE_OPTIONS=--openssl-legacy-provider
     image: smartkg
     build: ./smartkg/
     ports:
       - 8082:8080
   ui:
+    environment:
+      - NODE_OPTIONS=--openssl-legacy-provider
     image: ui
     build: ./ui/
     ports:
       - 8083:8080
+
+networks:
+  default:
+    external:
+      name: smartkgservices_default

@@ -1,4 +1,5 @@
-FROM python36
+FROM node:14.15.4
+FROM python:3.6
 
 COPY aspnetcore-runtime-2.1.16-linux-x64.tar.gz /data/
 

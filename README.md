@@ -94,6 +94,7 @@ SmartKG是一款轻量级知识图谱可视化+智能对话框架。它能够根
 
              访问前端：http://${docker_host_ip}:8083 主页面
                        http://${docker_host_ip}:8083/upload 上传页面
+	     注意`docker_host_ip`的设置，不可以是`127.0.0.1`，否则MongoDB等无法正确连接。
 
 ## 3. 生成自己的图谱
 
@@ -125,4 +126,7 @@ SmartKG是一款轻量级知识图谱可视化+智能对话框架。它能够根
 	保存设置后直接 Publish！
 
 
+## Bugfix
 
+1. Set evironment variable `NODE_OPTIONS=--openssl-legacy-provider` in `dockers/smartkg_services/dockerfile.yml` to avoid node.js error [DONE]
+2. Resolve th hard coded IP issue in `dockers/smartkg_services/smartkg/local_config/appsettings.MogoDB.json`.[DONE]
